@@ -1,4 +1,4 @@
-###  HYDROME PACKAGES ###
+###  HYDROME PACKAGE ###
 install.packages("HydroMe")
 library(HydroMe)
 #  BROOK & COREY(1964) water retention model
