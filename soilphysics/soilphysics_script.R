@@ -2,13 +2,13 @@
 install.packages("soilphysics")
 # Package
 library(soilphysics)
-# Data to soil water content and  the matric potential values
+# Data of swc(w) and matric pot(h)
 w <- c(0.5650, 0.4013, 0.2502, 0.2324, 0.2307, 0.1926, 0.1812, 0.1730)
 h <- c(0.001, 50.65, 293.77, 790.14, 992.74, 5065, 10130, 15195)
 #  van Genuchten Function
 fitsoilwater(w, h)
 # Function to calculate the soil water content based on the van Genuchten
-# Data to water in potential 0,1 kPa
+# Soil water content for the potential 0,1 kPa
 soilwater(x = 0.1, theta_R = 0.16761, theta_S = 0.56531, alpha = 0.04748, n = 1.52926)
 # Function to determine the preconsolidation stress
 # input data: stress and void ratio
