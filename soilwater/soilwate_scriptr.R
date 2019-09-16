@@ -1,7 +1,7 @@
 ## SOILWATER PACKAGES ##
 install.packages("soilwater")
 library(soilwater)
-# Data from the package
+# Data from the package manual
 soiltype <- c("sand","silty-sand","loam","clay")
 theta_sat <- c(0.44,0.39,0.51,0.48)
 theta_res <- c(0.02,0.155,0.04,0.10)
