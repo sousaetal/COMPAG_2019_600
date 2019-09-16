@@ -1,7 +1,7 @@
 ## SOILHYP PACKAGE ##
 install.packages("SoilHyP")
 library(SoilHyP)
-#  Data dataSHP from the package
+#  Data dataSHP from the package manual
 data('dataSHP')
 # fitSHP function-Soil Hydraulic Properties
 ans <- fitSHP(obs         = list(th = dataSHP$th, K = dataSHP$Ku),
@@ -21,7 +21,7 @@ ans <- fitSHP(obs         = list(th = dataSHP$th, K = dataSHP$Ku),
 ans$par
 # plot  results
 plot(ans)
-# fitSHP function tobimodal van Genuchten-Mualem model
+# fitSHP function to bimodal van Genuchten-Mualem model
 ans <- fitSHP(obs         = list(th = dataSHP$th, K = dataSHP$Ku),
               suc          = list(th = dataSHP$suc, K = dataSHP$suc),
               FUN.shp      = 'vg',
@@ -37,22 +37,22 @@ ans <- fitSHP(obs         = list(th = dataSHP$th, K = dataSHP$Ku),
               control      = list(ncomplex = 15, reltol = 1e-07,tolsteps = 7)
 )
 ans$par
-# plot  results
+# plot  output
 plot(ans)
-# Unimodal van Genuchten model
+# unimodal van Genuchten model
 Ku(suc = seq(1, 1000, by = 1), FUN.shp = 'vGM',
    par.shp = list(Ks = 10, ths = 0.5, thr = 0, alfa = 0.02, n = 1.5, tau = 0.5),
    modality = 'uni', suc.negativ = FALSE)
-# Bimodal van Genuchten model
+# bimodal van Genuchten model
 Ku(suc = seq(1, 1000, by = 1), FUN.shp = 'vGM',
    par.shp = list(Ks = 10, ths = 0.5, thr = 0, alfa = 0.02,
                   n = 1.5, tau = 0.5, w2 = 0.1, alfa2 = 0.1, n2 = 3),
    modality = 'bi', suc.negativ = FALSE)
-# Unimodal Peters-Durner-Iden model
+# unimodal Peters-Durner-Iden model
 Ku(suc = seq(1, 1000, by = 1), FUN.shp = 'PDI', modality = 'uni',
    par.shp = list(Ks = 10, ths = 0.5, thr = 0, alfa = 0.02, n = 1.5, tau = 0.5, omega = 0.001),
    suc.negativ = FALSE)
-# Brooks and Corey  (only unimodal)
+# Brooks and Corey  model (only unimodal)
 Ku(suc = seq(1, 1000, by = 1), FUN.shp = 'bc', modality = 'uni',
    par.shp = list(ths = 0.4, thr = 0, lambda = 0.211, alfa = 0.1, tau = 0.5, ks = 10),
    suc.negativ = FALSE)
