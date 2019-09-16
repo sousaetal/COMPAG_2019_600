@@ -8,7 +8,7 @@ h <- c(0.001, 50.65, 293.77, 790.14, 992.74, 5065, 10130, 15195)
 #  van Genuchten Function
 fitsoilwater(w, h)
 # Function to calculate the soil water content based on the van Genuchten
-# Soil water content for the potential 0,1 kPa
+# soil water content for the 0,1 kPa water potential
 soilwater(x = 0.1, theta_R = 0.16761, theta_S = 0.56531, alpha = 0.04748, n = 1.52926)
 # Function to determine the preconsolidation stress
 # input data: stress and void ratio
