@@ -4,7 +4,7 @@ library(soiltexture)
 # Set a 2 by 2 plot matrix:
 old.par <- par(no.readonly=T)
 par("mfcol" = c(1,2),"mfrow"=c(1,2))
-# Use this option to data for one sample
+# Use this option to data of one sample
 data <- data.frame("CLAY" = c(5),"SILT" = c(5),"SAND" = c(90))
 # Use this option for a set of data 
 data<- data.frame("CLAY" = c(05,60,15,05,25,05,25,45,65,75,13,47),
